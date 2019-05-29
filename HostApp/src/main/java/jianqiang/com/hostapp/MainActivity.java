@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         fileRelease = getDir("dex", 0); //0 表示Context.MODE_PRIVATE
 
-        Log.d("DEMO", "dexpath:" + dexpath);
-        Log.d("DEMO", "fileRelease.getAbsolutePath():" +
+        Log.d("sanbo.DEMO", "dexpath:" + dexpath);
+        Log.d("sanbo.DEMO", "fileRelease.getAbsolutePath():" +
                 fileRelease.getAbsolutePath());
 
         classLoader = new DexClassLoader(dexpath,
@@ -77,9 +77,10 @@ public class MainActivity extends AppCompatActivity {
 
                     tv.setText(name);
                     Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
+                    Log.i("sanbo.DEMO", "load result:" + name);
 
                 } catch (Exception e) {
-                    Log.e("DEMO", "msg:" + e.getMessage());
+                    Log.e("sanbo.DEMO", Log.getStackTraceString(e));
                 }
             }
         });
